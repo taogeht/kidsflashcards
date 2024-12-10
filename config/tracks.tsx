@@ -39,6 +39,20 @@ export interface Track {
       { id: 6, word: "swimming pool", image: "card6.jpg" },
       ]
     },
+    { id: 3, 
+      name: "It's a.....", 
+      numFlashcards: 8,
+      cards: [
+        { id: 1, word: "bear", image: "card1.jpg"},
+        { id: 2, word: "panda", image: "card2.jpg" },
+      { id: 3, word: "deer", image: "card3.jpg" },
+      { id: 4, word: "zebra", image: "card4.jpg" },
+      { id: 5, word: "kangaroo", image: "card5.jpg" },
+      { id: 6, word: "giraffe", image: "card6.jpg" },
+      { id: 7, word: "parrot", image: "card7.jpg" },
+      { id: 8, word: "peacock", image: "card8.jpg" },
+      ]
+    },
   ]
   
   export const getTrackById = (id: number): Track | undefined => {

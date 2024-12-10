@@ -21,7 +21,7 @@ export default function FlashcardGrid({ trackName }: FlashcardGridProps) {
   }
 
   const getAudioPath = (card: FlashCard) => {
-    return `/audio/voice/card${card.id}.mp3`
+    return `/audio/voice/track${track.id}/card${card.id}.mp3`
   }
 
   const handleCardClick = (card: FlashCard) => {

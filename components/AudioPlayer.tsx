@@ -21,7 +21,7 @@ export default function AudioPlayer() {
 
   return (
     <div className="bg-primary text-primary-foreground p-4 rounded-lg shadow-lg mb-8">
-      <audio ref={audioRef} src="/audio/${encodeURIComponent(trackName.toLowerCase().replace(/ /g, '-'))}.mp3" />
+      <audio ref={audioRef} src="/audio/${name.toLowerCase().replace(/ /g, '-')}.mp3" />
       <Button
         onClick={togglePlay}
         size="lg"

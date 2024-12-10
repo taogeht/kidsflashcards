@@ -20,6 +20,10 @@ export default function TouchGame({ trackName }: TouchGameProps) {
   const audioRef = useRef<HTMLAudioElement>(null)
   const track = getTrackByName(trackName)
 
+  const getVoicePath = (trackId: number, cardId: number) => {
+    return `/audio/voice/track${trackId}/card${cardId}.mp3`
+  }
+
   const generateQuestion = async () => {
     if (!track) return
     setIsLoading(true)
@@ -48,7 +52,7 @@ export default function TouchGame({ trackName }: TouchGameProps) {
     try {
       await new Promise(resolve => setTimeout(resolve, 1000))
       if (audioRef.current) {
-        audioRef.current.src = `/audio/voice/card${questionCard.id}.mp3`
+        audioRef.current.src = getVoicePath(track.id, questionCard.id)
         await audioRef.current.play()
       }
     } catch (error) {
@@ -89,9 +93,10 @@ export default function TouchGame({ trackName }: TouchGameProps) {
   }
 
   const playCurrentAudio = async () => {
-    if (audioRef.current && !isLoading && currentCard) {
+    if (audioRef.current && !isLoading && currentCard && track) {
       try {
         audioRef.current.currentTime = 0
+        audioRef.current.src = getVoicePath(track.id, currentCard.id)
         await audioRef.current.play()
       } catch (error) {
         console.log('Audio playback interrupted', error)

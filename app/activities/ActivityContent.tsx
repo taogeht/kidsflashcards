@@ -105,7 +105,7 @@ export default function ActivityContent() {
                   <Button 
                     className="mt-4"
                     onClick={() => {
-                      console.log('Setting activity to:', activity.id) // Add this for debugging
+                      console.log('Setting activity to:', activity.id)
                       setSelectedActivity(activity.id)
                     }}
                   >
